@@ -1,7 +1,15 @@
 
 # PROFILE LIST
 
-api/
+api/profiles
+
+## Profile Details
+
+api/profiles/{id}
+
+## Categories and details
+
+api/categories and api/categories/{id}
 
 ## User List
 

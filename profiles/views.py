@@ -3,7 +3,6 @@ from rest_framework import generics
 from .serializers import ProfileSerializer, UserSerializer, CategorySerializer
 from .models import Profile, Category
 
-# Create your views here.
 
 class ProfileList(generics.ListCreateAPIView):
     queryset = Profile.objects.all()
@@ -25,3 +24,8 @@ class UserDetail(generics.RetrieveUpdateAPIView, generics.RetrieveDestroyAPIView
 class CategoryView(generics.ListCreateAPIView):
     serializer_class = CategorySerializer
     queryset = Category.objects.all()
+
+
+class CategoryDetails(generics.RetrieveUpdateAPIView, generics.RetrieveDestroyAPIView):
+    queryset = Category.objects.all()
+    serializer_class = CategorySerializer
