@@ -1,7 +1,7 @@
 from django.contrib.auth import get_user_model
 from rest_framework import generics
-from .serializers import ProfileSerializer, UserSerializer
-from .models import Profile
+from .serializers import ProfileSerializer, UserSerializer, CategorySerializer
+from .models import Profile, Category
 
 # Create your views here.
 
@@ -21,3 +21,7 @@ class UserList(generics.ListCreateAPIView):
 class UserDetail(generics.RetrieveUpdateAPIView, generics.RetrieveDestroyAPIView):
     queryset = get_user_model().objects.all()
     serializer_class = UserSerializer
+
+class CategoryView(generics.ListCreateAPIView):
+    serializer_class = CategorySerializer
+    queryset = Category.objects.all()
